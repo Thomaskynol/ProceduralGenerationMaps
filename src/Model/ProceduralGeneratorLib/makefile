@@ -23,7 +23,7 @@ OPTIMIZATIONFLAGS = -O3 -march=native -flto -fomit-frame-pointer
 # -fomit-frame-pointer  → Removes the frame pointer from the stack, generating faster code.
 
 # The target file name
-TARGET = ProceduralMapsGeneration.dll
+TARGET = C:/Users/types/Documents/scripts/ProceduralGenerationMaps/src/ProceduralMapsGeneration.dll
 
 # The source file to compile
 SRC = ProceduralMapsGeneration.c HeightMapGenerator.c PerlinNoise.c

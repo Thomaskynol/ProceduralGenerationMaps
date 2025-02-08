@@ -2,5 +2,5 @@
   "files.associations": {
     "heightmapgenerator.h": "c"
   },
-  "cSpell.words": ["Perlin"]
+  "cSpell.words": ["Heightmap", "Perlin"]
 }
