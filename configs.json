@@ -1,0 +1,8 @@
+{
+    "HeightMapGeneration": {
+        "width":10,
+        "height": 10,
+        "scale":  20,
+        "amplitude": 25
+    }
+}
