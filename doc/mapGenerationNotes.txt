@@ -1,0 +1,9 @@
+--[[
+Gerar o mapa com hexágonos.
+Definir o terreno (altitudes, elevações).
+Gerar os corpos d'água com base no terreno (rios, oceanos, lagos).
+Calcular a umidade com base na proximidade da água e altitude.
+Definir os biomas a partir de umidade, temperatura e altitude.
+Gerar o mapa com vegetação.
+Gerar as estruturas no mundo com base nos biomas e na história.
+]]

@@ -1,6 +1,11 @@
-#include "C:\Users\types\Documents\Lua\lua.h"
-#include "C:\Users\types\Documents\Lua\lauxlib.h"
-#include "C:\Users\types\Documents\Lua\lualib.h"
+#include <lua.h>
+//#include <lauxlib.h>
+//#include <lualib.h>
+
+//#include <luajit.h>
+#include <lauxlib.h>
+#include <lualib.h>
+
 #include "HeightMapGenerator.h"
 
 // Example C function to add two numbers
@@ -43,11 +48,28 @@ static int lua_GenerateHeightMap(lua_State *L)
 }
 
 // Register the function with Lua
+//__declspec(dllexport) int luaopen_ProceduralMapsGeneration(lua_State *L)
+//{
+//    static const luaL_Reg ProceduralMapsGeneration[] = {
+//        {"GenerateHeightmap", lua_GenerateHeightMap},
+//        {NULL, NULL}};
+//    luaL_newlib(L, ProceduralMapsGeneration);
+//    return 1;
+//}
+
 __declspec(dllexport) int luaopen_ProceduralMapsGeneration(lua_State *L)
 {
-    static const luaL_Reg ProceduralMapsGeneration[] = {
-        {"GenerateHeightmap", lua_GenerateHeightMap},
-        {NULL, NULL}};
-    luaL_newlib(L, ProceduralMapsGeneration);
+    // Cria a tabela da biblioteca
+    lua_newtable(L);
+
+    // Adiciona as funções à tabela
+    lua_pushcfunction(L, lua_GenerateHeightMap);
+    lua_setfield(L, -2, "GenerateHeightmap");
+
+    // Se você quiser registrar outras funções, como lua_add:
+    lua_pushcfunction(L, lua_add);
+    lua_setfield(L, -2, "Add");
+
+    // Retorna a tabela como resultado
     return 1;
 }

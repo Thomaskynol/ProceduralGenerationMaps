@@ -1,15 +1,9 @@
-require("luapath")
-
 local ProceduralMapsGeneration = require('ProceduralMapsGeneration')
---[[
-ProceduralMapsGeneration.GenerateHeightmap(Width, Height, Scale, Amplitude) --> heightmap
-]]
-
 -- Registra o tempo antes de chamar a função
 local startTime = os.clock()
 
 -- Chama a função
-local Heightmap = ProceduralMapsGeneration.GenerateHeightmap(300, 300, 20, 25)
+local Heightmap = ProceduralMapsGeneration.GenerateHeightmap(8000, 8000, 20, 25)
 
 -- Registra o tempo depois de chamar a função
 local endTime = os.clock()
