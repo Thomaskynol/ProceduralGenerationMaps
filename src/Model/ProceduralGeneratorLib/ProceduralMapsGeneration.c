@@ -6,6 +6,7 @@
 #include <lauxlib.h>
 #include <lualib.h>
 
+#include "PerlinNoise.h"
 #include "HeightMapGenerator.h"
 
 // Example C function to add two numbers
@@ -47,15 +48,15 @@ static int lua_GenerateHeightMap(lua_State *L)
     return 1;
 }
 
-// Register the function with Lua
-//__declspec(dllexport) int luaopen_ProceduralMapsGeneration(lua_State *L)
-//{
-//    static const luaL_Reg ProceduralMapsGeneration[] = {
-//        {"GenerateHeightmap", lua_GenerateHeightMap},
-//        {NULL, NULL}};
-//    luaL_newlib(L, ProceduralMapsGeneration);
-//    return 1;
-//}
+static int lua_PerlinNoise(lua_State *L)
+{
+    float x = lua_tonumber(L, 1); // Get first argument
+    float y = lua_tonumber(L, 2); // Get second argument
+    
+    double result = PerlinNoise(x, y);
+    lua_pushnumber(L, result);     // Push result to Lua stack
+    return 1;                     // Return 1 result
+}
 
 __declspec(dllexport) int luaopen_ProceduralMapsGeneration(lua_State *L)
 {
@@ -67,6 +68,9 @@ __declspec(dllexport) int luaopen_ProceduralMapsGeneration(lua_State *L)
     lua_setfield(L, -2, "GenerateHeightmap");
 
     // Se você quiser registrar outras funções, como lua_add:
+    lua_pushcfunction(L, lua_PerlinNoise);
+    lua_setfield(L, -2, "PerlinNoise");
+
     lua_pushcfunction(L, lua_add);
     lua_setfield(L, -2, "Add");
 

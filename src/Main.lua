@@ -3,7 +3,7 @@ local ProceduralMapsGeneration = require('ProceduralMapsGeneration')
 local startTime = os.clock()
 
 -- Chama a função
-local Heightmap = ProceduralMapsGeneration.GenerateHeightmap(8000, 8000, 20, 25)
+local Heightmap = ProceduralMapsGeneration.GenerateHeightmap(2000, 2000, 20, 25)
 
 -- Registra o tempo depois de chamar a função
 local endTime = os.clock()
