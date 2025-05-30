@@ -1,3 +1,6 @@
 *.dll
+*.o
+*.os
 *.exe
 *.bat
+usageExample.lua
