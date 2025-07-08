@@ -3,4 +3,5 @@
 *.os
 *.exe
 *.bat
-usageExample.lua
+*.bmp
+*.obj

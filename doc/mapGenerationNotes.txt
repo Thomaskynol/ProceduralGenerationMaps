@@ -2,7 +2,9 @@
 HeightMap
 
 biomeMask
-OpenSimplexNoise with octaves
+
+OpenSimplexNoise with octaves -- HeightMap
+
 Water and Terrein corrosion
 
 
