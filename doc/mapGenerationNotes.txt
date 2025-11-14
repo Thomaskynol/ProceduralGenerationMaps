@@ -15,4 +15,5 @@ Calcular a umidade com base na proximidade da água e altitude.
 Definir os biomas a partir de umidade, temperatura e altitude.
 Gerar o mapa com vegetação.
 Gerar as estruturas no mundo com base nos biomas e na história.
+
 ]]

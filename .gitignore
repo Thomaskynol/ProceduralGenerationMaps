@@ -5,3 +5,6 @@
 *.bat
 *.bmp
 *.obj
+*.blend
+*.blend1
+.venv
